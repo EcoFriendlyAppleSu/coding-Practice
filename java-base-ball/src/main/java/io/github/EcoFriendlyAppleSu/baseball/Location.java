@@ -1,0 +1,28 @@
+package io.github.EcoFriendlyAppleSu.baseball;
+
+import io.github.EcoFriendlyAppleSu.baseball.exception.LocationOutOfRangeException;
+
+public class Location {
+
+    private static int MIN_LOCATION = 0;
+    private static int MAX_LOCATION = 2;
+    private int position;
+
+    public Location(int position) {
+        if (position < MIN_LOCATION || position > MAX_LOCATION) {
+            throw new LocationOutOfRangeException("위치는 1부터 3 사이여야 합니다.");
+        }
+        this.position = position;
+    }
+
+    public boolean checkNumber() {
+        if (isLocatable()) {
+            return true;
+        }
+        return false;
+    }
+
+    private boolean isLocatable() {
+        return position >= MIN_LOCATION && position <= MAX_LOCATION;
+    }
+}
