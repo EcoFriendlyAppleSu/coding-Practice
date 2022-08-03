@@ -25,4 +25,19 @@ public class BallNumber {
     private boolean isBallInnerRange() {
         return number >= MIN_NUMBER || number <= MAX_NUMBER;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof BallNumber)) return false;
+
+        BallNumber that = (BallNumber) o;
+
+        return number == that.number;
+    }
+
+    @Override
+    public int hashCode() {
+        return number;
+    }
 }
