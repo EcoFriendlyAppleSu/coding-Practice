@@ -1,4 +1,4 @@
-package io.github.EcoFriendlyAppleSu.baseball;
+package io.github.EcoFriendlyAppleSu.baseball.wrapper;
 
 import io.github.EcoFriendlyAppleSu.baseball.exception.LocationOutOfRangeException;
 

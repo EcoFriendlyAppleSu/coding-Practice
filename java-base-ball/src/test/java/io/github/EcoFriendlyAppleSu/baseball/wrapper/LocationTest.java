@@ -1,9 +1,8 @@
-package io.github.EcoFriendlyAppleSu.baseball;
+package io.github.EcoFriendlyAppleSu.baseball.wrapper;
 
 import io.github.EcoFriendlyAppleSu.baseball.exception.LocationOutOfRangeException;
-import org.assertj.core.api.Assertions;
+import io.github.EcoFriendlyAppleSu.baseball.wrapper.Location;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 

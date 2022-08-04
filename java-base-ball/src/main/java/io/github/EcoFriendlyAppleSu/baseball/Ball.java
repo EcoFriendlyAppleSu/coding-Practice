@@ -1,5 +1,8 @@
 package io.github.EcoFriendlyAppleSu.baseball;
 
+import io.github.EcoFriendlyAppleSu.baseball.wrapper.BallNumber;
+import io.github.EcoFriendlyAppleSu.baseball.wrapper.Location;
+
 public class Ball {
     private BallNumber ballNumber;
     private Location location;
