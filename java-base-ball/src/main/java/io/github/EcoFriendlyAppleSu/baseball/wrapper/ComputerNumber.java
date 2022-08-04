@@ -13,9 +13,13 @@ public class ComputerNumber {
     private static int STRING_LENGTH = 3;
 
     public ComputerNumber(String input) {
-        if (input.length() != STRING_LENGTH) {
+        if (isNotLength(input)) {
             throw new ComputerLengthOutOfRange("오직 3 자리 숫자만 가능합니다.");
         }
         this.input = input;
+    }
+
+    private boolean isNotLength(String input) {
+        return input.length() != STRING_LENGTH;
     }
 }
