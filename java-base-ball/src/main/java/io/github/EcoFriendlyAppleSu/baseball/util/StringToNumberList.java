@@ -22,8 +22,8 @@ public class StringToNumberList {
     /*
      * mapToInt, map 차이 공유
      * */
-    public List<Integer> stringArrayToIntegerListUsingStream(String str) {
-        return Stream.of(splitString(str)).mapToInt(number -> Integer.valueOf(number)).boxed().collect(Collectors.toList());
+    public static List<Integer> stringArrayToIntegerListUsingStream(String str) {
+        return Stream.of(str.split("")).mapToInt(number -> Integer.valueOf(number)).boxed().collect(Collectors.toList());
     }
 
     private String[] splitString(String str) {

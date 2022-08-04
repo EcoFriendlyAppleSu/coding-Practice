@@ -40,4 +40,12 @@ public class Ball {
         result = 31 * result + (location != null ? location.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Ball{" +
+                "ballNumber=" + ballNumber +
+                ", location=" + location +
+                '}';
+    }
 }

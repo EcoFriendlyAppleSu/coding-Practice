@@ -40,4 +40,9 @@ public class BallNumber {
     public int hashCode() {
         return number;
     }
+
+    @Override
+    public String toString() {
+        return "number=" + number;
+    }
 }

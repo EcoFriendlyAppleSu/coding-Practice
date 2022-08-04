@@ -16,7 +16,7 @@ public class GenerateRandomNumber {
     private static int MAX_NUMBER = 9;
     private static int NUMBER_SIZE = 3;
 
-    public static String generateRandomNumber() {
+    public static List<Integer> generateRandomNumber() {
         Random random = new Random();
         int result = 0;
         List<Integer> list = new ArrayList<>();
@@ -27,7 +27,7 @@ public class GenerateRandomNumber {
             }
             list.add(result);
         }
-        return list.stream().map(String::valueOf).collect(Collectors.joining());
+        return list.stream().map(Integer::valueOf).collect(Collectors.toList()); // return 568 ex.
     }
 
     public static String generateRandomNumberUsingStream() {

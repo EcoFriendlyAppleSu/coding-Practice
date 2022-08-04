@@ -2,9 +2,11 @@ package io.github.EcoFriendlyAppleSu.baseball;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Application {
     public static void main(String[] args) {
-        System.out.println(GenerateRandomNumber.generateRandomNumberUsingStream());
+        PlayGame playGame = new PlayGame();
+        playGame.gameStart();
     }
 }

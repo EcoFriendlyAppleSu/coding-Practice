@@ -40,4 +40,9 @@ public class Location {
     public int hashCode() {
         return position;
     }
+
+    @Override
+    public String toString() {
+        return "position=" + position;
+    }
 }
