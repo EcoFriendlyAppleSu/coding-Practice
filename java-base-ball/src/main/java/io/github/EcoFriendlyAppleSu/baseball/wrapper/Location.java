@@ -4,8 +4,8 @@ import io.github.EcoFriendlyAppleSu.baseball.exception.LocationOutOfRangeExcepti
 
 public class Location {
 
-    private static int MIN_LOCATION = 1;
-    private static int MAX_LOCATION = 3;
+    private static int MIN_LOCATION = 0;
+    private static int MAX_LOCATION = 2;
     private int position;
 
     public Location(int position) {

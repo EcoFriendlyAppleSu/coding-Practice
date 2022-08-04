@@ -18,7 +18,7 @@ public class LocationTest {
 //    }
 
     @ParameterizedTest
-    @ValueSource(ints = {1,2,3})
+    @ValueSource(ints = {0,1,2})
     public void locationInnerRangeTest(int input) throws Exception{
         Location location = new Location(input);
         assertThat(location.checkNumber()).isTrue();
@@ -26,7 +26,7 @@ public class LocationTest {
 
     @DisplayName("Location Wrapper Class Exception Test")
     @ParameterizedTest
-    @ValueSource(ints = {-1, 4})
+    @ValueSource(ints = {-1, 3})
     public void locationOutOfRangeExceptionTest(int input) throws Exception {
         assertThatThrownBy(() -> new Location(input))
                 .isInstanceOf(LocationOutOfRangeException.class)
