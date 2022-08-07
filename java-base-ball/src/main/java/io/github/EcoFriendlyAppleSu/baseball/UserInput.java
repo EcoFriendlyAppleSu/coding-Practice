@@ -21,6 +21,7 @@ public class UserInput {
     }
 
     public static Integer againAskInputNumber() {
+        System.out.println("1 : 다른 게임 2: 종료");
         return Integer.valueOf(scanner.nextLine());
     }
 }

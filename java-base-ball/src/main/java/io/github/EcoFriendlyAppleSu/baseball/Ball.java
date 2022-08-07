@@ -3,6 +3,11 @@ package io.github.EcoFriendlyAppleSu.baseball;
 import io.github.EcoFriendlyAppleSu.baseball.wrapper.BallNumber;
 import io.github.EcoFriendlyAppleSu.baseball.wrapper.Location;
 
+/*
+* Role : 가진 공을 판단하는 역할
+* Responsibility : 판단
+* Collaboration : x
+*/
 public class Ball {
     private BallNumber ballNumber;
     private Location location;

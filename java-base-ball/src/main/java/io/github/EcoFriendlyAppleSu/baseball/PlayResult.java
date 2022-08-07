@@ -24,6 +24,7 @@ public class PlayResult {
     }
 
     public boolean isGameEnd() {
+        System.out.println("3 STRIKE!");
         return this.strike == 3;
     }
 

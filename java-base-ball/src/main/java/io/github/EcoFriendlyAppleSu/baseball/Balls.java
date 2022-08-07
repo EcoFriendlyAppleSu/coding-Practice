@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
-* Role : 공들의 위치과 값을 비교하는 역할
+* Role : 비교하는 역할
 * Responsibility : 공들의 비교값을 결과로 출력한다.
 * Collaboration : playResult와 협력한다.
+* computer, user -> List<Ball> // Balls X
 */
 public class Balls {
 
@@ -28,6 +29,7 @@ public class Balls {
         return BallStatus.NOTHING;
     }
 
+    // 협력 <<
     public PlayResult play(List<Integer> userBall) {
         Balls userBalls = new Balls(userBall);
         PlayResult result = new PlayResult();

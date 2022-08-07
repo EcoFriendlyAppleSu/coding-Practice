@@ -27,14 +27,22 @@ public class GenerateRandomNumber {
             }
             list.add(result);
         }
-        return list.stream().map(Integer::valueOf).collect(Collectors.toList()); // return 568 ex.
-    }
+        return list.stream().map(Integer::valueOf).collect(Collectors.toList()); // return random 3digit number without 0
+    } // 공자릿수에 0
 
-    public static String generateRandomNumberUsingStream() {
+    public String generateRandomNumberUsingStream() {
         return IntStream.rangeClosed(0, 2)
                 .map(x -> new Random().nextInt(MAX_NUMBER) + MIN_NUMBER)
                 .boxed()
                 .map(String::valueOf)
+                .collect(Collectors.joining());
+    } // return random 3digit number with 0
+
+    public String generate() {
+        return IntStream.rangeClosed(0, 2)
+                .distinct()
+                .limit(3)
+                .mapToObj(String::valueOf)
                 .collect(Collectors.joining());
     }
 }
