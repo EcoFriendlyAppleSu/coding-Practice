@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 public class GenerateRandom {
 
-    public List<Integer> generate() {
+    public static List<Integer> generate() {
         return new Random().ints(1, 9)
                 .distinct()
                 .limit(3)

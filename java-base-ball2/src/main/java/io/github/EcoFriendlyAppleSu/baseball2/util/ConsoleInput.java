@@ -12,6 +12,10 @@ public class ConsoleInput {
     public ConsoleInput() {
     }
 
+//    public String scannerNextLine() {
+//        return userInputNumber(scanner.nextLine());
+//    }
+
     public String userInputNumber(String userInput) {
         if (isInnerBoundaryLength(userInput)) {
             throw new UserInputOutOfBounds(ConsoleOutput.USER_INPUT_OUT_OF_MESSAGE);
