@@ -8,4 +8,6 @@ public class ConsoleOutput {
     public static final String USER_INPUT_OUT_OF_MESSAGE = "세 자리 숫자를 입력해주세요";
     public static final String THREE_STRIKE_GAME_OVER = "3 STRIKE!";
 
+    public static final String GAME_START = "GAME START";
+
 }

@@ -5,12 +5,12 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class StringUtil {
-    public List<Integer> stringToIntegerList(String inputString) {
+    public static List<Integer> stringToIntegerList(String inputString) {
 
         return Stream.of(stringToSplit(inputString)).map(x-> Integer.valueOf(x)).collect(Collectors.toList());
     }
 
-    private String[] stringToSplit(String str) {
+    private static String[] stringToSplit(String str) {
         return str.split("");
     }
 }

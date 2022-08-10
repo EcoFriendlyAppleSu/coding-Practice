@@ -2,6 +2,7 @@ package io.github.EcoFriendlyAppleSu.baseball2.util;
 
 import io.github.EcoFriendlyAppleSu.baseball2.exception.UserInputOutOfBounds;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class ConsoleInput {
@@ -12,9 +13,9 @@ public class ConsoleInput {
     public ConsoleInput() {
     }
 
-//    public String scannerNextLine() {
-//        return userInputNumber(scanner.nextLine());
-//    }
+    public List<Integer> scannerNextLine() {
+        return StringUtil.stringToIntegerList(userInputNumber(scanner.nextLine()));
+    }
 
     public String userInputNumber(String userInput) {
         if (isInnerBoundaryLength(userInput)) {

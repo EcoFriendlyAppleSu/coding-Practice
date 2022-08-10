@@ -25,4 +25,10 @@ public class GameResult {
         System.out.println(ConsoleOutput.THREE_STRIKE_GAME_OVER);
         return this.strike == 3;
     }
+
+    @Override
+    public String toString() {
+        return "ball=" + ball +
+                ", strike=" + strike;
+    }
 }
