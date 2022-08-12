@@ -2,4 +2,5 @@ rootProject.name = 'codekata'
 include 'java-base-ball'
 include 'java-base-ball2'
 include 'java-string-calculator'
+include 'java-car-racing'
 
