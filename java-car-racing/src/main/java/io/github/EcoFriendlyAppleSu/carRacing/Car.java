@@ -1,10 +1,12 @@
 package io.github.EcoFriendlyAppleSu.carRacing;
 
+import io.github.EcoFriendlyAppleSu.carRacing.Console.ConsoleOut;
 import io.github.EcoFriendlyAppleSu.carRacing.exception.CarNameOutOfLength;
 
 public class Car {
 
     private String name;
+    private int position = 0;
 
     public Car(String name) {
         if (isOverCarLength(name)) {
@@ -13,7 +15,16 @@ public class Car {
         this.name = name;
     }
 
+    public int currentPosition() {
+        return position;
+    }
+
     private boolean isOverCarLength(String name) {
         return name.length() > ConsoleOut.CAR_NAME_RANGE;
+    }
+
+    // RandomGenerateUtil과 협력이 필요한 메소드
+    public void carMoving() {
+
     }
 }

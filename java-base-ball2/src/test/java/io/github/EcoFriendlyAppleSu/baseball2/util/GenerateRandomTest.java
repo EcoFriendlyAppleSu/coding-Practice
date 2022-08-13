@@ -16,5 +16,4 @@ class GenerateRandomTest {
         List<Integer> generate = generateRandom.generate();
         Assertions.assertThat(generate.stream().mapToInt(x -> x).sum()).isGreaterThanOrEqualTo(6).isLessThanOrEqualTo(24);
     }
-
 }

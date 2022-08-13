@@ -11,7 +11,7 @@ import java.util.List;
 */
 public class Balls {
 
-    private List<Ball> answer;
+    private List<Ball> answer; //3개의 공
     public Balls(List<Integer> balls) {
         answer = new ArrayList<>();
         settingComputerBalls(balls);

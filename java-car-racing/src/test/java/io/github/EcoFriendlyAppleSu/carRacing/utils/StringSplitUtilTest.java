@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 // , 가 아닌 다른 문자가 왔을 때 처리해 줘야 한다.
 class StringSplitUtilTest {
-    
+
     @DisplayName("Number, Comma, Alpha Test")
     @ParameterizedTest
     @ValueSource(strings = {"abcd,efgh,hrgk", "123,55,aaaa,RE"})

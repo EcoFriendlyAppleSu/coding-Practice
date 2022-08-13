@@ -12,10 +12,14 @@ public class BallNumber {
 
     public BallNumber(int ballNumber) {
         this.ballNumber = ballNumber;
-        if (ballNumber < MIN_NUMBER || ballNumber > MAX_NUMBER) {
+        if (isInnerRange(ballNumber)) {
                 throw new BallNumberOutOfIndex(ConsoleOutput.BALL_NUMBER_EXCEPTION);
         }
         this.ballNumber = ballNumber;
+    }
+
+    private boolean isInnerRange(int ballNumber) {
+        return ballNumber < MIN_NUMBER || ballNumber > MAX_NUMBER;
     }
 
     @Override

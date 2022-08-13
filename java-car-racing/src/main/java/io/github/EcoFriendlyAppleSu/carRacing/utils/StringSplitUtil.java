@@ -1,6 +1,6 @@
 package io.github.EcoFriendlyAppleSu.carRacing.utils;
 
-import io.github.EcoFriendlyAppleSu.carRacing.ConsoleOut;
+import io.github.EcoFriendlyAppleSu.carRacing.Console.ConsoleOut;
 import io.github.EcoFriendlyAppleSu.carRacing.exception.StringTypeException;
 
 import java.util.regex.Matcher;
