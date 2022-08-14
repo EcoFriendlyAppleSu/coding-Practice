@@ -32,14 +32,14 @@ class CarTest {
     @Test
     public void carMoveFrontTest() throws Exception {
         Car car = new Car("pobi");
-        MoveStrategy moveStrategy = () -> 9;
-        assertThat(car.movePosition(moveStrategy)).isEqualTo(1);
+        MoveStrategy moveStrategy = () -> true; // 반환 값을 고정
+        assertThat(car.movePosition(moveStrategy)).isEqualTo(1); // true
     }
 
     @Test
     public void carDoesNotMoveFrontTest() throws Exception {
         Car car = new Car("pobi");
-        MoveStrategy moveStrategy = () -> 3;
+        MoveStrategy moveStrategy = () -> false; // 반환 값을 고정
         assertThat(car.movePosition(moveStrategy)).isEqualTo(0);
     }
 }

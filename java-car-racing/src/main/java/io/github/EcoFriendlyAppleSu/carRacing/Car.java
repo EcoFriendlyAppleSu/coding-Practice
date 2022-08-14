@@ -17,8 +17,9 @@ public class Car {
     }
 
     // position의 값이 결과값으로 판단하는건가
+    // return type is int
     public int movePosition(MoveStrategy moveStrategy) {
-        if (moveStrategy.canMove() >= ConsoleOut.RANDOM_RANGE) {
+        if (moveStrategy.canMove()) { // boolean type
              position++;
         }
         return position;
