@@ -6,7 +6,7 @@ public class ConsoleOut {
     public static final int MOVE_FRONT = 1;
     public static final int NOT_MOVE = 0;
     public static final int RANDOM_RANGE = 4;
-    public static final int RANDOM_GENERATE_BOUND = 10;
+    public static final int RANDOM_GENERATE_BOUND = 9;
 
     // String type Console Out Message
     public static final String CAR_NAME_OUT_OF_RANGE_MESSAGE = "자동차 이름의 길이는 5를 넘을 수 없습니다.";
