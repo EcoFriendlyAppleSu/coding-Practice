@@ -10,7 +10,7 @@ public class StringSplitUtil {
 
     private static String pattern = "^[a-zA-Z0-9,]+$";
 
-    public String[] modificationStringToNameStrings(String input) {
+    public static String[] modificationStringToNameStrings(String input) {
         Pattern settingPattern = Pattern.compile(pattern);
         Matcher matcher = settingPattern.matcher(input);
         // 정규식을 통한 String 검증

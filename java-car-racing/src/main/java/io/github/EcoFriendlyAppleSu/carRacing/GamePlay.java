@@ -9,5 +9,11 @@ public class GamePlay {
     }
     public static void init() {
         System.out.println(ConsoleOut.GAME_START_MESSAGE);
+        String userInput = ConsoleIn.carNameInput();
+        System.out.println(ConsoleOut.GAME_TIMES);
+        int userInputTime = ConsoleIn.carMovingTime();
+        Cars result = new Cars(userInput, userInputTime);
+        result.carsMovingTimes();
+        result.findWinner();
     }
 }
