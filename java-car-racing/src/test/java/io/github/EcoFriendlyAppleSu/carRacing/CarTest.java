@@ -42,16 +42,4 @@ class CarTest {
         MoveStrategy moveStrategy = () -> false; // 반환 값을 고정
         assertThat(car.movePosition(moveStrategy)).isEqualTo(0);
     }
-
-    @Test
-    public void carTestDoesNotUsingLambda() throws Exception {
-        Car car = new Car("abcd");
-        car.movePosition(new MoveStrategy() {
-            @Override
-            public boolean canMove() {
-                return true;
-            }
-        });
-        assertThat(car.currentPosition()).isEqualTo(1);
-    }
 }
