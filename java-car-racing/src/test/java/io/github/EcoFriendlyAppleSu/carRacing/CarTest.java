@@ -47,4 +47,16 @@ class CarTest {
         car.movePosition(moveStrategy);
         assertThat(car.currentPosition()).isEqualTo(0);
     }
+
+    @Test
+    public void carTestDoesNotUsingLambda() throws Exception {
+        Car car = new Car("abcd");
+        car.movePosition(new MoveStrategy() {
+            @Override
+            public boolean canMove() {
+                return true;
+            }
+        });
+        assertThat(car.currentPosition()).isEqualTo(1);
+    }
 }
