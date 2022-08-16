@@ -6,11 +6,11 @@ public class ConsoleIn {
 
     private static final Scanner SCANNER = new Scanner(System.in);
 
-    public static String carNameInput() {
+    public String carNameInput() {
         return SCANNER.nextLine();
     }
 
-    public static int carMovingTime() {
+    public int carMovingTime() {
         return SCANNER.nextInt();
     }
 }

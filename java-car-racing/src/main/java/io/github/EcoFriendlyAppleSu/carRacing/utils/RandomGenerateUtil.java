@@ -10,10 +10,10 @@ public class RandomGenerateUtil {
     private Random random = new Random();
     public int generate() {
         if (isNotMove()) {
-            return ConsoleOut.NOT_MOVE; // return 0
+            return ConsoleOut.NOT_MOVE;
         }
-        return ConsoleOut.MOVE_FRONT; // return 1
-    }
+        return ConsoleOut.MOVE_FRONT;
+    } // 테스트가 어려워요
 
     private boolean isNotMove() {
         return random.nextInt(ConsoleOut.RANDOM_GENERATE_BOUND) < ConsoleOut.RANDOM_RANGE;

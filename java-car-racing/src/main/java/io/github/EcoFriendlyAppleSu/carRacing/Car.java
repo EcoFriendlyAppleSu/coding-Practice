@@ -18,22 +18,23 @@ public class Car {
 
     // position의 값이 결과값으로 판단하는건가
     // return type is int
-    public void movePosition(MoveStrategy moveStrategy) {
+    public int movePosition(MoveStrategy moveStrategy) {
         if (moveStrategy.canMove()) { // boolean type
-            position++;
+             position++;
         }
+        return position;
     }
 
     public int currentPosition() {
         return position;
     }
 
-    public String currentCarName() {
-        return name;
-    }
-
     private boolean isOverCarLength(String name) {
         return name.length() > ConsoleOut.CAR_NAME_RANGE;
     }
 
+    // RandomGenerateUtil과 협력이 필요한 메소드
+    public void carMoving() {
+
+    }
 }

@@ -14,6 +14,5 @@ public class ConsoleOut {
     public static final String GAME_TIMES = "시도할 회수는 몇회인가요?";
     public static final String GAME_RESULT_MESSAGE = "실행 결과";
     public static final String INPUT_TYPE_EXCEPTION_MESSAGE = "이름은 쉼표, 영문, 숫자만 가능합니다.";
-    public static final String GAME_RESULT_DASH = "-";
 
 }
