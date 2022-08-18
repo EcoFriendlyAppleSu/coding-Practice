@@ -1,6 +1,7 @@
 package io.github.EcofriendlyAppleSu.baseball.domain;
 
 import io.github.EcofriendlyAppleSu.baseball.exception.BallNumberOutOfRange;
+import io.github.EcofriendlyAppleSu.baseball.wrapper.BallNumber;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;

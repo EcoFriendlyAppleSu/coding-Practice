@@ -1,4 +1,4 @@
-package io.github.EcofriendlyAppleSu.baseball.domain;
+package io.github.EcofriendlyAppleSu.baseball.wrapper;
 
 import io.github.EcofriendlyAppleSu.baseball.exception.BallNumberOutOfRange;
 import io.github.EcofriendlyAppleSu.baseball.util.ConsoleOut;
@@ -12,5 +12,20 @@ public class BallNumber {
             throw new BallNumberOutOfRange(ConsoleOutMessage.BALL_NUMBER_OUT_OF_RANGE_MESSAGE.message);
         }
         this.number = number;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof BallNumber)) return false;
+
+        BallNumber that = (BallNumber) o;
+
+        return number == that.number;
+    }
+
+    @Override
+    public int hashCode() {
+        return number;
     }
 }
