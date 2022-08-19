@@ -20,6 +20,10 @@ public class Balls {
         return new Balls(ballData);
     }
 
+    public List<Ball> currentBalls() {
+        return balls;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
