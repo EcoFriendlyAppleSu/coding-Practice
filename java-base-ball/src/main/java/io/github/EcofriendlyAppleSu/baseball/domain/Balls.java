@@ -19,4 +19,19 @@ public class Balls {
     public static Balls of(List<Integer> ballData) {
         return new Balls(ballData);
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Balls)) return false;
+
+        Balls balls1 = (Balls) o;
+
+        return balls != null ? balls.equals(balls1.balls) : balls1.balls == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return balls != null ? balls.hashCode() : 0;
+    }
 }

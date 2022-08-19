@@ -2,14 +2,13 @@ package io.github.EcofriendlyAppleSu.baseball.domain;
 
 import io.github.EcofriendlyAppleSu.baseball.util.ConsoleOut;
 import io.github.EcofriendlyAppleSu.baseball.util.Generator;
-import io.github.EcofriendlyAppleSu.baseball.util.RandomGenerator;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
+
+// Stream을 사용하는 더 좋은 방법이 있을텐데..
+// 책임, 메소드를 나누는 이야기를 하면 좋을 것 같다
 public class Computer {
 
     public Balls generateThreeBall(Generator generator) {
@@ -19,18 +18,25 @@ public class Computer {
     private List<Integer> extractBallNumbers(Generator generator) {
 
         List<Integer> tempBallContainer = new ArrayList<>();
-        boolean flag = false;
 
         while (true) {
             int randomNumber = generator.generator();
-            if (tempBallContainer.contains(randomNumber)) {
+            if (hasItContents(tempBallContainer, randomNumber)) {
                 continue;
             }
             tempBallContainer.add(randomNumber);
-            if (tempBallContainer.size() == ConsoleOut.BALL_SIZE) {
+            if (isSameSize(tempBallContainer)) {
                 break;
             }
         }
         return tempBallContainer;
+    }
+
+    private boolean isSameSize(List<Integer> tempBallContainer) {
+        return tempBallContainer.size() == ConsoleOut.BALL_SIZE;
+    }
+
+    private boolean hasItContents(List<Integer> tempBallContainer, int randomNumber) {
+        return tempBallContainer.contains(randomNumber);
     }
 }
