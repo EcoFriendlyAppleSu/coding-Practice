@@ -1,9 +1,11 @@
 package io.github.EcofriendlyAppleSu.baseball.domain;
 
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -18,11 +20,23 @@ class RefereeTest {
 
     @Test
     public void nothingTest() throws Exception {
-        //given
+        List<Ball> com = balls.currentBalls();
+        Ball eachBall = new Ball(2, 8);
+        Assertions.assertThat(Referee.eachBallPlayResult(com, eachBall)).isEqualTo(BallStatus.NOTHING);
+    }
 
-        //when
+    @Test
+    public void ballTest() throws Exception {
+        List<Ball> com = balls.currentBalls();
+        Ball eachBall = new Ball(2, 1);
+        Assertions.assertThat(Referee.eachBallPlayResult(com, eachBall)).isEqualTo(BallStatus.BALL);
+    }
 
-        //then
+    @Test
+    public void strikeTest() throws Exception {
+        List<Ball> com = balls.currentBalls();
+        Ball eachBall = new Ball(2, 3);
+        Assertions.assertThat(Referee.eachBallPlayResult(com, eachBall)).isEqualTo(BallStatus.STRIKE);
     }
 
 }

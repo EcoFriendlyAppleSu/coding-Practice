@@ -4,6 +4,7 @@ import io.github.EcofriendlyAppleSu.baseball.util.ConsoleOut;
 import io.github.EcofriendlyAppleSu.baseball.util.Generator;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -29,6 +30,7 @@ public class Computer {
                 break;
             }
         }
+        System.out.println(Arrays.asList(tempBallContainer));
         return tempBallContainer;
     }
 
@@ -39,4 +41,6 @@ public class Computer {
     private boolean hasItContents(List<Integer> tempBallContainer, int randomNumber) {
         return tempBallContainer.contains(randomNumber);
     }
+
+
 }
