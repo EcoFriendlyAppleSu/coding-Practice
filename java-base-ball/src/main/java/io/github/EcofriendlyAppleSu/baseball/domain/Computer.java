@@ -30,7 +30,7 @@ public class Computer {
                 break;
             }
         }
-        System.out.println(Arrays.asList(tempBallContainer));
+        System.out.println(tempBallContainer);
         return tempBallContainer;
     }
 
