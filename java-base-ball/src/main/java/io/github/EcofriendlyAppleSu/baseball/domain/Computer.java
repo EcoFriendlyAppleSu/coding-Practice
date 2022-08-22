@@ -1,11 +1,12 @@
 package io.github.EcofriendlyAppleSu.baseball.domain;
 
-import io.github.EcofriendlyAppleSu.baseball.util.ConsoleOut;
 import io.github.EcofriendlyAppleSu.baseball.util.Generator;
+import io.github.EcofriendlyAppleSu.baseball.util.ValidationUtil;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 
 // Stream을 사용하는 더 좋은 방법이 있을텐데..
@@ -17,29 +18,25 @@ public class Computer {
     }
 
     private List<Integer> extractBallNumbers(Generator generator) {
-
-        List<Integer> tempBallContainer = new ArrayList<>();
-
+        List<Integer> generatedBallCollection = null;
         while (true) {
-            int randomNumber = generator.generator();
-            if (hasItContents(tempBallContainer, randomNumber)) {
-                continue;
-            }
-            tempBallContainer.add(randomNumber);
-            if (isSameSize(tempBallContainer)) {
+            generatedBallCollection = getBalls(generator);
+            boolean validate = ValidationUtil.validate(generatedBallCollection);
+            if (isValidateThreeNumber(validate)) {
                 break;
             }
         }
-        System.out.println(Arrays.asList(tempBallContainer));
-        return tempBallContainer;
+
+        System.out.println(generatedBallCollection);
+        return generatedBallCollection;
     }
 
-    private boolean isSameSize(List<Integer> tempBallContainer) {
-        return tempBallContainer.size() == ConsoleOut.BALL_SIZE;
+    private boolean isValidateThreeNumber(boolean validate) {
+        return validate == true;
     }
 
-    private boolean hasItContents(List<Integer> tempBallContainer, int randomNumber) {
-        return tempBallContainer.contains(randomNumber);
+    private List<Integer> getBalls(Generator generator) {
+        return IntStream.range(0, 3).map(x -> generator.generator()).distinct().boxed().collect(Collectors.toList());
     }
 
 
