@@ -1,6 +1,6 @@
 package io.github.EcofriendlyAppleSu.baseball.domain.wrapper;
 
-import io.github.EcofriendlyAppleSu.baseball.domain.exception.BallNumberException;
+import io.github.EcofriendlyAppleSu.baseball.domain.exception.BallNumberOutOfRangeException;
 
 public class BallNumber {
 
@@ -8,7 +8,7 @@ public class BallNumber {
 
     private BallNumber(int ballNumber) {
         if (ballNumber < 0 || ballNumber > 9) {
-            throw new BallNumberException();
+            throw new BallNumberOutOfRangeException();
         }
         this.ballNumber = ballNumber;
     }
