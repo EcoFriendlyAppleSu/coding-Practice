@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class StringUtilImpl {
+public class StringUtil {
 
     public static List<Integer> stringToIntegerList(String input) {
         return Arrays.stream(splitString(input)).mapToInt(Integer::valueOf).boxed().collect(Collectors.toList());

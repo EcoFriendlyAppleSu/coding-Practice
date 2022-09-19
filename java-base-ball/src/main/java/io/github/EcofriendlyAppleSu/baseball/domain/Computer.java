@@ -7,13 +7,19 @@ import java.util.List;
 public class Computer implements Player {
 
     private Balls balls;
+    private GenerateNumber generateNumber;
 
-    private Computer(List<Integer> inputBalls) {
-        this.balls = Balls.from(inputBalls);
+    private Computer(GenerateNumber generateNumber) {
+        this.generateNumber = generateNumber;
+        this.balls = Balls.from(generateBalls());
     }
 
-    public static Computer from(List<Integer> inputBalls) {
-        return new Computer(inputBalls);
+    public static Computer from(GenerateNumber generateNumber) {
+        return new Computer(generateNumber);
+    }
+
+    private List<Integer> generateBalls() {
+        return this.generateNumber.generator();
     }
 
     @Override

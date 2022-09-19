@@ -4,8 +4,8 @@ import java.util.List;
 
 public class Referee {
 
-    List<Ball> gamerBalls;
-    List<Ball> computerBalls;
+    private List<Ball> gamerBalls;
+    private List<Ball> computerBalls;
 
     private Referee(Player computer, Player gamer) {
         computerBalls = computer.currentBalls();
@@ -17,7 +17,11 @@ public class Referee {
     }
 
     public void matchBalls() {
-
+        for (Ball gamerBall : gamerBalls) {
+            for (Ball computerBall : computerBalls) {
+                BallStatus eachBallResult = computerBall.matchBall(gamerBall);
+            }
+        }
     }
 
 }

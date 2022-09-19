@@ -10,31 +10,23 @@ import java.util.List;
 
 public class BaseBallConfig {
 
-    public Referee GameStart() {
-        return Referee.of(ComputerInit(), GamerInit());
+    public Referee RefereeInit(Player computer, Player gamer) {
+        return Referee.of(computer, gamer);
     }
 
-    public Player GamerInit() {
-        return Gamer.from(stringUtilService());
+    public Player GamerInit(String userInput) {
+        return Gamer.from(userInput);
     }
 
     public Player ComputerInit() {
-        return Computer.from(generateRandomNumberService());
+        return Computer.from(generateNumberInit());
     }
 
-    public List<Integer> userInputGamerNumberAgain() {
-        return stringUtilService();
-    }
+    /*public StringUtil stringUtilService() {
+        return new StringUtilImpl();
+    }*/
 
-    private List<Integer> generateRandomNumberService() {
-        return generateNumberInit().generator();
-    }
-
-    private GenerateNumber generateNumberInit() {
+    public GenerateNumber generateNumberInit() {
         return new GenerateNumberImpl();
-    }
-
-    private List<Integer> stringUtilService() {
-        return StringUtilImpl.stringToIntegerList(ConsoleIn.userInput());
     }
 }
