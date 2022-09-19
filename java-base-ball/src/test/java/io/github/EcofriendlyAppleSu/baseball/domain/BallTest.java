@@ -1,6 +1,7 @@
 package io.github.EcofriendlyAppleSu.baseball.domain;
 
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -37,5 +38,10 @@ class BallTest {
     public void ballNothingTest() throws Exception {
         Ball userBall = Ball.of(1, 0);
         assertThat(gameBall.matchBall(userBall)).isEqualTo(BallStatus.NOTHING);
+    }
+
+    @AfterEach
+    void coolDown() {
+        gameBall = null;
     }
 }
