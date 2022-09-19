@@ -17,6 +17,16 @@ public class Ball {
         return new Ball(ballNumber, Location);
     }
 
+    public BallStatus matchBall(Ball userBall) {
+        if (this.equals(userBall)) {
+            return BallStatus.STRIKE;
+        }
+        if (this.ballNumber.equals(userBall.ballNumber)) {
+            return BallStatus.BALL;
+        }
+        return BallStatus.NOTHING;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -33,16 +43,6 @@ public class Ball {
         int result = ballNumber != null ? ballNumber.hashCode() : 0;
         result = 31 * result + (location != null ? location.hashCode() : 0);
         return result;
-    }
-
-    public BallStatus matchBall(Ball userBall) {
-        if (this.equals(userBall)) {
-            return BallStatus.STRIKE;
-        }
-        if (this.ballNumber.equals(userBall.ballNumber)) {
-            return BallStatus.BALL;
-        }
-        return BallStatus.NOTHING;
     }
 
 }
