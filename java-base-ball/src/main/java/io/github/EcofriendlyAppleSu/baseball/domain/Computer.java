@@ -1,4 +1,6 @@
 package io.github.EcofriendlyAppleSu.baseball.domain;
 
-public class Computer {
+public class Computer implements Player {
+
+    private Balls balls;
 }
