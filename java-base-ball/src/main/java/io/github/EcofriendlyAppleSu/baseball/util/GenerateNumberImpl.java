@@ -11,8 +11,6 @@ public class GenerateNumberImpl implements GenerateNumber {
 
     @Override
     public List<Integer> generator() {
-        return Stream.generate(new Random()::ints)
-                .flatMap(IntStream::boxed)
-                .distinct().limit(3).collect(Collectors.toList());
+        return new Random().ints(1, 10).distinct().limit(3).boxed().collect(Collectors.toList());
     }
 }

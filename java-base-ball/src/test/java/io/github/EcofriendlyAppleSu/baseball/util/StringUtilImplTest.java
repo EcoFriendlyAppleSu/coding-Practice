@@ -12,8 +12,7 @@ class StringUtilImplTest {
 
     @Test
     void stringUtilResultTest() throws Exception {
-        StringUtil stringUtil = new StringUtilImpl();
-        Assertions.assertThat(stringUtil.stringToIntegerList("123")).isEqualTo(Arrays.asList(1, 2, 3));
+        Assertions.assertThat(StringUtilImpl.stringToIntegerList("123")).isEqualTo(Arrays.asList(1, 2, 3));
     }
 
 }

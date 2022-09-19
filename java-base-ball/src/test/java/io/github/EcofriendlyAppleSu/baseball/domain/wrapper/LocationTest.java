@@ -1,6 +1,7 @@
 package io.github.EcofriendlyAppleSu.baseball.domain.wrapper;
 
 import io.github.EcofriendlyAppleSu.baseball.domain.exception.LocationOutOfRangeException;
+import io.github.EcofriendlyAppleSu.baseball.util.ConsoleOut;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -20,7 +21,8 @@ class LocationTest {
     @ParameterizedTest
     @ValueSource(ints = {-1, 3})
     public void LocationOutOfRangeValueExceptionTest(int location) throws Exception {
-        assertThatThrownBy(() -> Location.from(location)).isInstanceOf(LocationOutOfRangeException.class);
+        assertThatThrownBy(() -> Location.from(location)).isInstanceOf(LocationOutOfRangeException.class)
+                .hasMessage(ConsoleOut.LOCATION_EXCEPTION_MESSAGE);
     }
 
 }

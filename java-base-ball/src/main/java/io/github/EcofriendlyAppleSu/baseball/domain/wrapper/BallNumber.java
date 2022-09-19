@@ -1,20 +1,25 @@
 package io.github.EcofriendlyAppleSu.baseball.domain.wrapper;
 
 import io.github.EcofriendlyAppleSu.baseball.domain.exception.BallNumberOutOfRangeException;
+import io.github.EcofriendlyAppleSu.baseball.util.ConsoleOut;
 
 public class BallNumber {
 
     private int ballNumber;
 
     private BallNumber(int ballNumber) {
-        if (ballNumber < 0 || ballNumber > 9) {
-            throw new BallNumberOutOfRangeException();
+        if (isNotBallNumber(ballNumber)) {
+            throw new BallNumberOutOfRangeException(ConsoleOut.BALL_NUMBER_EXCEPTION_MESSAGE);
         }
         this.ballNumber = ballNumber;
     }
 
     public static BallNumber from(int ballNumber) {
         return new BallNumber(ballNumber);
+    }
+
+    private boolean isNotBallNumber(int ballNumber) {
+        return ballNumber < ConsoleOut.BALL_NUMBER_MIX || ballNumber > ConsoleOut.BALL_NUMBER_MAX;
     }
 
     @Override
