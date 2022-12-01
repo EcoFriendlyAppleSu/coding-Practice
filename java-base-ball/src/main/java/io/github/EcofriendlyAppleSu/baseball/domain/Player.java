@@ -5,4 +5,6 @@ import java.util.List;
 public interface Player {
 
     List<Ball> currentBalls();
+
+    void ballSettingAgain();
 }

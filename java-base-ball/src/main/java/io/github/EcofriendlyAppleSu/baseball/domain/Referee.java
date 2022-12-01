@@ -16,12 +16,21 @@ public class Referee {
         return new Referee(computer, gamer);
     }
 
-    public void matchBalls() {
+    public GameReport matchBalls() {
+        GameReport gameReport = new GameReport();
         for (Ball gamerBall : gamerBalls) {
-            for (Ball computerBall : computerBalls) {
-                BallStatus eachBallResult = computerBall.matchBall(gamerBall);
-            }
+            BallStatus ballStatus = ballsMatching(gamerBall);
+            gameReport.report(ballStatus);
         }
+        return gameReport;
+    }
+
+    private BallStatus ballsMatching(Ball gamerBall) {
+        return computerBalls.stream()
+                .map(computerBall -> computerBall.matchBall(gamerBall))
+                .filter(BallStatus::isNotNothing)
+                .findFirst()
+                .orElse(BallStatus.NOTHING);
     }
 
 }

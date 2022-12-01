@@ -22,10 +22,6 @@ public class BaseBallConfig {
         return Computer.from(generateNumberInit());
     }
 
-    /*public StringUtil stringUtilService() {
-        return new StringUtilImpl();
-    }*/
-
     public GenerateNumber generateNumberInit() {
         return new GenerateNumberImpl();
     }

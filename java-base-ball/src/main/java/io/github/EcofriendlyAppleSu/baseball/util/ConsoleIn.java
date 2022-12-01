@@ -10,4 +10,9 @@ public class ConsoleIn {
         System.out.print(ConsoleOut.INPUT_NUMBER_MESSAGE);
         return scanner.nextLine();
     }
+
+    public static String userGameAgain() {
+        System.out.println(ConsoleOut.RESTART_GAME_MESSAGE);
+        return scanner.nextLine();
+    }
 }

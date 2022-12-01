@@ -26,4 +26,9 @@ public class Computer implements Player {
     public List<Ball> currentBalls() {
         return balls.currentBalls();
     }
+
+    @Override
+    public void ballSettingAgain() {
+        balls = Balls.from(generateBalls());
+    }
 }

@@ -5,19 +5,25 @@ public class GameReport {
     private int strike;
     private int ball;
 
-    public void isStrike() {
-        strike += 1;
+    public int getStrike() {
+        return strike;
     }
 
-    public void isBall() {
-        ball += 1;
+    public int getBall() {
+        return ball;
+    }
+
+    public void report(BallStatus status) {
+        if (status.isStrike()) {
+            this.strike += 1;
+        }
+        if (status.isBall()) {
+            this.ball += 1;
+        }
     }
 
     public boolean isThreeStrike() {
-        if (strike == 3) {
-            return true;
-        }
-        return false;
+        return this.strike == 3;
     }
 
     public void printStrikeBallCount() {
