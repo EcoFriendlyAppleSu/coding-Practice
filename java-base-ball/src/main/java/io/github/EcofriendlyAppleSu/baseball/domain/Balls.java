@@ -18,6 +18,11 @@ public class Balls {
     return new Balls(balls);
   }
 
+  // TODO: 2022/12/12 balls matching
+  public void matches(Balls givenBalls) {
+
+  }
+
   public List<Ball> currentBalls() {
     return balls;
   }
