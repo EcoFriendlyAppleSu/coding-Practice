@@ -1,4 +1,4 @@
-package io.github.EcofriendlyAppleSu.baseball.domain;
+package io.github.EcofriendlyAppleSu.baseball.domain.exception;
 
 public class BallNumberOutOfRangeException extends IllegalArgumentException {
 

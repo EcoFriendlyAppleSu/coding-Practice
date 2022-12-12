@@ -1,4 +1,6 @@
-package io.github.EcofriendlyAppleSu.baseball.domain;
+package io.github.EcofriendlyAppleSu.baseball.domain.wrapper;
+
+import io.github.EcofriendlyAppleSu.baseball.domain.exception.BallNumberOutOfRangeException;
 
 public class BallNumber {
 
