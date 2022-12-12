@@ -22,7 +22,10 @@ public class Ball {
     if (this.equals(ball)) {
       return BallStatus.STRIKE;
     }
-    return BallStatus.BALL;
+    if (ballNumber.equals(ball.ballNumber)) {
+      return BallStatus.BALL;
+    }
+    return BallStatus.NOTHING;
   }
 
   @Override

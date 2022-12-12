@@ -24,15 +24,20 @@ class BallTest {
     assertDoesNotThrow(() -> Ball.of(5, 1));
   }
 
-  @DisplayName("주어진 공과 비교했을 때, 공 숫자와 위치 둘 다 틀릴 경우 - BALL")
+  @DisplayName("주어진 공과 비교했을 때, 공 숫자와 위치 둘 다 틀릴 경우 - NOTHING")
   @Test
   public void ballBallCaseTest() throws Exception {
-    assertThat(Ball.of(6, 0).matchBall(ball)).isEqualTo(BallStatus.BALL);
+    assertThat(Ball.of(6, 0).matchBall(ball)).isEqualTo(BallStatus.NOTHING);
   }
 
   @Test
   public void ballStrikeCaseTest() throws Exception {
     assertThat(Ball.of(5, 1).matchBall(ball)).isEqualTo(BallStatus.STRIKE);
+  }
+
+  @Test
+  public void ballNothingCaseTest() throws Exception {
+    assertThat(Ball.of(5, 2).matchBall(ball)).isEqualTo(BallStatus.BALL);
   }
 
 }
