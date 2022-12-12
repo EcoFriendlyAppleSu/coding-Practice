@@ -1,5 +1,6 @@
 package io.github.EcofriendlyAppleSu.baseball.domain;
 
+import io.github.EcofriendlyAppleSu.baseball.domain.enums.BallStatus;
 import io.github.EcofriendlyAppleSu.baseball.domain.wrapper.BallNumber;
 import io.github.EcofriendlyAppleSu.baseball.domain.wrapper.Location;
 
@@ -15,5 +16,9 @@ public class Ball {
 
   public static Ball of(int ballNumber, int location) {
     return new Ball(ballNumber, location);
+  }
+
+  public BallStatus matchBall(Ball ball) {
+    return BallStatus.BALL;
   }
 }
