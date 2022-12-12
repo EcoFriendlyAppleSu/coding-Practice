@@ -30,4 +30,9 @@ class BallTest {
     assertThat(Ball.of(6, 0).matchBall(ball)).isEqualTo(BallStatus.BALL);
   }
 
+  @Test
+  public void ballStrikeCaseTest() throws Exception {
+    assertThat(Ball.of(5, 1).matchBall(ball)).isEqualTo(BallStatus.STRIKE);
+  }
+
 }
