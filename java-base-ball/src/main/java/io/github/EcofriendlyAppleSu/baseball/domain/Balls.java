@@ -20,7 +20,7 @@ public class Balls {
 
   // TODO: 2022/12/12 balls matching
   public void matches(Balls givenBalls) {
-
+    List<Ball> userBalls = givenBalls.currentBalls();
   }
 
   public List<Ball> currentBalls() {
