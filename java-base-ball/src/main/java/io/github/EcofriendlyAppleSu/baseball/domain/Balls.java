@@ -1,5 +1,7 @@
 package io.github.EcofriendlyAppleSu.baseball.domain;
 
+import io.github.EcofriendlyAppleSu.baseball.Report;
+import io.github.EcofriendlyAppleSu.baseball.domain.enums.BallStatus;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,8 +21,16 @@ public class Balls {
   }
 
   // TODO: 2022/12/12 balls matching
-  public void matches(Balls givenBalls) {
+  public Report matches(Balls givenBalls) {
     List<Ball> userBalls = givenBalls.currentBalls();
+    Report report = new Report();
+    for (Ball ball : balls) {
+      for (Ball userBall : userBalls) {
+        BallStatus ballResult = ball.matchBall(userBall);
+        report.countBall(ballResult);
+      }
+    }
+    return report;
   }
 
   public List<Ball> currentBalls() {

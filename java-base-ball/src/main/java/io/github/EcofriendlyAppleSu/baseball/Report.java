@@ -28,5 +28,7 @@ public class Report {
   public int currentStrikeCount() {
     return strike;
   }
-
+  public String printResult() {
+    return ball + " 볼, " + strike + "스트라이크";
+  }
 }

@@ -14,4 +14,8 @@ public class BaseballGame {
   public static BaseballGame Init(RandomNumberGenerator randomNumberGenerator) {
     return new BaseballGame(randomNumberGenerator);
   }
+
+  public static void run() {
+    
+  }
 }
