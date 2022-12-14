@@ -17,25 +17,34 @@ public class BaseballGame {
     boolean flag = true;
     ConsoleOut.GAME_INIT_MESSAGE.print();
     while (true) {
-
       var generatedString = randomNumberGenerator.generator();
       var computerBalls = Balls.from(ValueChanger.run(generatedString));
 
-      var inputString = ConsoleIn.gameBallNumberInput();
-      var userBalls = Balls.from(ValueChanger.run(inputString));
+      while (true) {
 
-      var report = computerBalls.matches(userBalls);
+        var inputString = ConsoleIn.gameBallNumberInput();
+        var userBalls = Balls.from(ValueChanger.run(inputString));
+        var report = computerBalls.matches(userBalls);
 
-      if (report.currentStrikeCount() == 3) {
-        ConsoleOut.THREE_STRIKE_MESSAGE.print();
-        ConsoleOut.NEW_GAME_MESSAGE.print();
-        var restartInput = ConsoleIn.reStartInput();
-        if (restartInput.equals("1")) {
-          continue;
+        System.out.println(report.printResult());
+
+        if (report.currentStrikeCount() == 3) {
+          ConsoleOut.THREE_STRIKE_MESSAGE.print();
+          ConsoleOut.NEW_GAME_MESSAGE.print();
+          var restartInput = ConsoleIn.reStartInput();
+          if (restartInput.equals("1")) {
+            ConsoleOut.GAME_RESTART_MESSAGE.print();
+            break;
+          }
+          flag = false;
+          break;
         }
+
+      }
+      if (flag == false) {
+        ConsoleOut.GAME_FINISH_MESSAGE.print();
         break;
       }
-      report.printResult();
     }
   }
 }
