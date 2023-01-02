@@ -1,6 +1,5 @@
 package io.github.EcoFriendlyAppleSu;
 
-import java.util.Scanner;
 
 public class Main {
 
