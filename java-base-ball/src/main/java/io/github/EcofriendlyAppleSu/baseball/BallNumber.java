@@ -1,36 +1,38 @@
 package io.github.EcofriendlyAppleSu.baseball;
 
+import io.github.EcofriendlyAppleSu.baseball.exception.BallNumberOutOfValueException;
+
 public class BallNumber {
 
-  private Integer ballNumber;
+    private int number;
 
-  private BallNumber(Integer ballNumber) {
-    if (ballNumber < 1 || ballNumber > 9) {
-      throw new BallNumberOutOfBounds();
-    }
-    this.ballNumber = ballNumber;
-  }
-
-  public static BallNumber initBallNumber(int number) {
-    return new BallNumber(number);
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (!(o instanceof BallNumber)) {
-      return false;
+    private BallNumber(int number) {
+        this.number = number;
     }
 
-    BallNumber that = (BallNumber) o;
+    public static BallNumber from(int number) {
+        if (number < 1 || number > 9) {
+            throw new BallNumberOutOfValueException();
+        }
+        return new BallNumber(number);
+    }
 
-    return ballNumber != null ? ballNumber.equals(that.ballNumber) : that.ballNumber == null;
-  }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof BallNumber)) {
+            return false;
+        }
 
-  @Override
-  public int hashCode() {
-    return ballNumber != null ? ballNumber.hashCode() : 0;
-  }
+        BallNumber that = (BallNumber) o;
+
+        return number == that.number;
+    }
+
+    @Override
+    public int hashCode() {
+        return number;
+    }
 }
